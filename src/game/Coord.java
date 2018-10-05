@@ -5,11 +5,15 @@ public class Coord {
 		x = i;
 		y = j;
 	}
-
+	public Coord(Coord c) {
+		x = c.x;
+		y = c.y;
+	}
 	public double x,y;
 
 
 	public void att(Coord c) {
+	
 		x = c.x;
 		y = c.y;
 	}

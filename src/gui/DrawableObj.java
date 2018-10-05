@@ -1,6 +1,7 @@
 package gui;
 
 
+import game.Coord;
 import game.Gameobj;
 
 public abstract class DrawableObj extends Gameobj implements Drawable {
@@ -8,9 +9,11 @@ public abstract class DrawableObj extends Gameobj implements Drawable {
 	DrawableObj( ){
 		super();
 	}
-	DrawableObj(Gameobj obj ){
-		
+
+	public DrawableObj(Gameobj obj) {
+		super(obj);
 	}
+	
 
 	
 

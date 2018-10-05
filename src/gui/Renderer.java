@@ -32,8 +32,7 @@ public class Renderer extends JPanel implements ActionListener {
   
  
     private void drawPictures(Graphics2D g, Drawable a) {
-    	System.out.println("paitning");
-        
+    	
         if (a != null) {
         	a.draw(g);  
         }
@@ -59,6 +58,7 @@ public class Renderer extends JPanel implements ActionListener {
  
     public void addImage(Drawable i) {
         drawables.add(i);
+        
     }
     
     public void clearImages() {

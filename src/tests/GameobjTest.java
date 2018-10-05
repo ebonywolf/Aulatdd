@@ -34,7 +34,25 @@ public class GameobjTest {
 		obj.moveto(2, 2);
 		obj.setSpeedVector(new Coord(2,3));
 		obj.move();
-		assertEquals(new Coord(4,5), obj.getPosition());
+		obj.move();
+		obj.move();
+		assertEquals(new Coord(8,11), obj.getPosition());
+	}
+	
+	@Test 
+	public void noCollision() {
+		Gameobj one = new Gameobj(new Coord(0,0), new Coord(50,50));
+		Gameobj two = new Gameobj(new Coord(50,50), new Coord(50,50));
+		assertEquals(false, one.collides(two));
+		assertEquals(false, two.collides(one));
+	}
+	
+	@Test 
+	public void collisionDetected() {
+		Gameobj one = new Gameobj(new Coord(0,0), new Coord(50,50));
+		Gameobj two = new Gameobj(new Coord(25,25), new Coord(50,50));
+		assertEquals(true, one.collides(two));
+		assertEquals(true, two.collides(one));
 	}
 
 }
